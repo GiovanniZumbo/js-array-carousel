@@ -33,13 +33,17 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-
-
 #gallery img {
     object-fit: contain;
     height: 100%;
     width: 100%;
     display: none;
+}
+
+#slider img {
+    object-fit: cover;
+    height: 100%;
+    width: 19%;
 }
 
 #gallery img.active {
@@ -55,4 +59,16 @@ body {
 
 #next-button {
     right: 0;
+}
+
+/* Slider */
+
+#slider {
+    width: 1100px;
+    height: 180px;
+    margin: 40px auto;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: space-between;
 }

@@ -13,6 +13,7 @@ Far funzionare il carosello attraverso i bottoni
 const gallery = document.getElementById('gallery')
 const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
+const slider = document.getElementById('slider')
 
 //* Creare un array con la raccolta delle immagini
 
@@ -28,6 +29,7 @@ for (let i = 0; i < folderImages.length; i++) {
 }
 
 gallery.innerHTML = imgs;
+slider.innerHTML = imgs;
 
 const images = document.querySelectorAll('#gallery img');
 
@@ -64,14 +66,13 @@ prevButton.addEventListener('click', function () {
 
     activeIndex--;
 
+    // @ Far ripartire il carosello una volta finite le immagini
     if (activeIndex < 0) {
         activeIndex = (images.length - 1);
     }
 
     images[activeIndex].classList.add('active');
 })
-
-
 
 
 
