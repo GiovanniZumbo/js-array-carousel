@@ -25,6 +25,11 @@ body {
     border: 1px solid black;
     margin-top: 50px;
     background-color: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    align-items: center;
+
+    /* position: relative; */
 }
 
 #gallery img {
@@ -36,4 +41,8 @@ body {
 
 #gallery img.active {
     display: block;
+}
+
+#gallery i {
+    margin: 0 10px;
 }
