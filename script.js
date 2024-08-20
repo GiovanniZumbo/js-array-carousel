@@ -11,13 +11,17 @@ Far funzionare il carosello attraverso i bottoni
 
 //* Recuperare gli elementi dal DOM
 
-const gallery = document.getElementById('gallery');
-const prevButton = document.getElementById('prev-button')
-const nextButton = document.getElementById('next-button')
+const images = document.querySelectorAll('#gallery img');
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
 
-//* Creare un array con le immagini
+//* Creare un array con la raccolta delle immagini
 
-const images = []
+const folderImages = ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'img/05.webp',]
+
+let activeIndex = 0;
+
+images[activeIndex].classList.add('active');
 
 // # EVENT HANDLING
 

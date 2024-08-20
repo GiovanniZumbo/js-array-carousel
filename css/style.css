@@ -50,6 +50,7 @@ body {
     position: absolute;
     margin: 0 10px;
     top: 50%;
+    cursor: pointer;
 }
 
 #next-button {
