@@ -32,13 +32,13 @@ gallery.innerHTML = imgs;
 const images = document.querySelectorAll('#gallery img');
 
 
-// # EVENT HANDLING
-
-// * Far funzionare il carosello attraverso i bottoni
-
 let activeIndex = 0;
 
 images[activeIndex].classList.add('active');
+
+// # EVENT HANDLING
+
+// * Far funzionare il carosello attraverso i bottoni
 
 // * Bottone successivo
 
@@ -48,8 +48,12 @@ nextButton.addEventListener('click', function () {
 
     activeIndex++;
 
-    images[activeIndex].classList.add('active');
+    // @ Far ripartire il carosello una volta finite le immagini
+    if (activeIndex === images.length) {
+        activeIndex = 0;
+    }
 
+    images[activeIndex].classList.add('active');
 })
 
 // * Bottone precedente 
@@ -60,9 +64,15 @@ prevButton.addEventListener('click', function () {
 
     activeIndex--;
 
-    images[activeIndex].classList.add('active');
+    if (activeIndex < 0) {
+        activeIndex = (images.length - 1);
+    }
 
+    images[activeIndex].classList.add('active');
 })
+
+
+
 
 
 // # PROCESSING
