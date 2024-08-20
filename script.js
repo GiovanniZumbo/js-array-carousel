@@ -32,6 +32,7 @@ gallery.innerHTML = imgs;
 slider.innerHTML = imgs;
 
 const images = document.querySelectorAll('#gallery img');
+const minis = document.querySelectorAll('#slider img')
 
 
 let activeIndex = 0;
@@ -47,6 +48,7 @@ images[activeIndex].classList.add('active');
 nextButton.addEventListener('click', function () {
 
     images[activeIndex].classList.remove('active')
+    minis[activeIndex].classList.remove('active');
 
     activeIndex++;
 
@@ -56,6 +58,7 @@ nextButton.addEventListener('click', function () {
     }
 
     images[activeIndex].classList.add('active');
+    minis[activeIndex].classList.add('active');
 })
 
 // * Bottone precedente 
@@ -63,6 +66,7 @@ nextButton.addEventListener('click', function () {
 prevButton.addEventListener('click', function () {
 
     images[activeIndex].classList.remove('active')
+    minis[activeIndex].classList.remove('active');
 
     activeIndex--;
 
@@ -72,9 +76,27 @@ prevButton.addEventListener('click', function () {
     }
 
     images[activeIndex].classList.add('active');
+    minis[activeIndex].classList.add('active');
 })
 
+// * Selezionare l'immagine dallo slider
 
+for (let i = 0; i < minis.length; i++) {
+    const mini = minis[i];
+
+    mini.addEventListener('click', function () {
+
+        images[activeIndex].classList.remove('active');
+        minis[activeIndex].classList.remove('active');
+
+        activeIndex = i;
+
+        images[activeIndex].classList.add('active');
+        minis[activeIndex].classList.add('active');
+
+    })
+
+}
 
 // # PROCESSING
 
