@@ -40,7 +40,7 @@ let activeIndex = 0;
 
 images[activeIndex].classList.add('active');
 
-// * Buttone successivo
+// * Bottone successivo
 
 nextButton.addEventListener('click', function () {
 
@@ -52,6 +52,17 @@ nextButton.addEventListener('click', function () {
 
 })
 
+// * Bottone precedente 
+
+prevButton.addEventListener('click', function () {
+
+    images[activeIndex].classList.remove('active')
+
+    activeIndex--;
+
+    images[activeIndex].classList.add('active');
+
+})
 
 
 // # PROCESSING
