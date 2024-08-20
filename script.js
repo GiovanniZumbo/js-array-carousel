@@ -29,17 +29,29 @@ for (let i = 0; i < folderImages.length; i++) {
 
 gallery.innerHTML = imgs;
 
-
-
 const images = document.querySelectorAll('#gallery img');
 
 
+// # EVENT HANDLING
 
+// * Far funzionare il carosello attraverso i bottoni
 
 let activeIndex = 0;
+
 images[activeIndex].classList.add('active');
 
-// # EVENT HANDLING
+// * Buttone successivo
+
+nextButton.addEventListener('click', function () {
+
+    images[activeIndex].classList.remove('active')
+
+    activeIndex++;
+
+    images[activeIndex].classList.add('active');
+
+})
+
 
 
 // # PROCESSING
